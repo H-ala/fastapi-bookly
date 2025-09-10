@@ -69,7 +69,7 @@ def register_middleware(app: FastAPI):
     app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"], allow_credentials=True) # * means we are allowing all things that are related to that thing
 
      # trusted host set the host header and will guard against HTTP Host Header attacks
-    app.add_middleware(TrustedHostMiddleware, allowed_hosts=["localhost", "127.0.0.1"])
+    app.add_middleware(TrustedHostMiddleware, allowed_hosts=["localhost", "127.0.0.1", "fastapi-bookly.onrender.com"])
 
 
     # this is how we set up a custom middleware and this can be in any asgi middleware that we want to use in our app(import it and add it like that)
