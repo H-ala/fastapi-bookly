@@ -18,7 +18,7 @@ async def life_span(app: FastAPI):
         # since init_db() is Coroutine we've got to use await for it
         # what this line does is to run the init_db() function in which it will connect to our db and do our stuff
     # from src.db.models import Book
-    # await init_db()
+    await init_db()
         # we are using lifespan event to make modification to our db
         # every time we create a table the lifespan event will run and create that table in our db
         # since we are using alembic now, server lifespan event is not needed anymore( init_db() is not needed anymore )
